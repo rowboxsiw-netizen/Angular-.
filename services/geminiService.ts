@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `
@@ -15,15 +14,12 @@ Guidelines:
 `;
 
 export class GeminiService {
-  private ai: GoogleGenAI;
-
-  constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-  }
-
   async chat(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
     try {
-      const response = await this.ai.models.generateContent({
+      // Re-initialize to ensure it picks up environment variables correctly on each call if needed
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      
+      const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: [...history, { role: 'user', parts: [{ text: message }] }],
         config: {
