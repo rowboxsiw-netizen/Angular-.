@@ -1,10 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Inspired Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Apple - Next Generation Excellence</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover the latest in innovation with our Apple-inspired experience. Featuring the new iPhone 16 Pro, iPad Pro with M4, and our intelligent AI Concierge.">
+    <meta name="keywords" content="Apple, iPhone, iPad, Mac, AI Concierge, Technology, Innovation">
+    <meta name="author" content="Apple Landing Page">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Apple - Next Generation Excellence">
+    <meta property="og:description" content="Experience the future of personal technology with our Apple-inspired landing page featuring an AI-powered concierge.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Apple - Next Generation Excellence">
+    <meta property="twitter:description" content="Experience the future of personal technology with our Apple-inspired landing page featuring an AI-powered concierge.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1200">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +32,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         .glass {
             background: rgba(255, 255, 255, 0.7);
@@ -33,6 +51,13 @@
         .animate-fade-up {
             animation: fade-up 0.8s ease-out forwards;
         }
+        /* Mobile optimization */
+        @media (max-width: 640px) {
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
     </style>
 <script type="importmap">
 {
@@ -46,7 +71,7 @@
 }
 </script>
 </head>
-<body class="bg-white text-zinc-900">
+<body class="bg-white text-zinc-900 antialiased selection:bg-blue-100">
     <div id="root"></div>
 </body>
 </html>
