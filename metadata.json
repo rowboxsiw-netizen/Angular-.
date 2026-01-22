@@ -1,0 +1,7 @@
+{
+  "name": "Apple-Style Landing Page",
+  "description": "A high-performance, aesthetically pleasing React landing page inspired by Apple's design language, featuring a Gemini-powered personal concierge.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
