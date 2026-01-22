@@ -9,13 +9,15 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      <div className="flex-1 pt-12">
+      <main className="flex-1 mt-12 overflow-hidden">
         {children}
-      </div>
+      </main>
       <Footer />
-      <GeminiConcierge />
+      <div className="fixed bottom-6 right-6 z-[300]">
+        <GeminiConcierge />
+      </div>
     </div>
   );
 };
