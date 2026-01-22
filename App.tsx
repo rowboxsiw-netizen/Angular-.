@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Store from './pages/Store';
+import ProductDetail from './pages/ProductDetail';
 
 const App: React.FC = () => {
   return (
@@ -10,7 +11,11 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
-        {/* Support for other pages could be added here */}
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/mac" element={<Store />} />
+        <Route path="/iphone" element={<Store />} />
+        <Route path="/ipad" element={<Store />} />
+        <Route path="/watch" element={<Store />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Layout>

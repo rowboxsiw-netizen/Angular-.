@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Search, ShoppingBag, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
+import { useCart } from '../context/CartContext';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { itemCount, setIsCartOpen } = useCart();
   const location = useLocation();
 
   useEffect(() => {
@@ -16,13 +18,12 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.classList.add('no-scroll');
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.classList.remove('no-scroll');
+      document.body.style.overflow = 'unset';
     }
   }, [isMobileMenuOpen]);
 
-  // Close menu on navigation
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex items-center gap-8 text-[12px] font-normal opacity-80">
           {NAV_ITEMS.map((item) => (
             <li key={item.label}>
-              <Link to={item.label === 'Store' ? '/store' : '/'} className="hover:opacity-100 transition-opacity">
+              <Link to={item.href} className="hover:opacity-100 transition-opacity">
                 {item.label}
               </Link>
             </li>
@@ -48,7 +49,14 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center gap-6 opacity-80">
           <Search size={16} className="cursor-pointer hover:opacity-100 hidden sm:block" />
-          <ShoppingBag size={16} className="cursor-pointer hover:opacity-100" />
+          <div className="relative group cursor-pointer" onClick={() => setIsCartOpen(true)}>
+            <ShoppingBag size={16} className="hover:opacity-100" />
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-in zoom-in">
+                {itemCount}
+              </span>
+            )}
+          </div>
           <button 
             className="md:hidden cursor-pointer hover:opacity-100 p-1" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -59,20 +67,17 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay - Full Screen Opaque Background */}
+      {/* Mobile Menu */}
       <div 
-        className={`fixed inset-0 bg-white transition-all duration-300 ease-in-out md:hidden z-[190] ${
-          isMobileMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-full invisible'
+        className={`fixed inset-0 bg-white transition-all duration-500 ease-[cubic-bezier(0.4, 0, 0.2, 1)] md:hidden z-[190] ${
+          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        <div className="pt-20 pb-10 px-10 flex flex-col h-full overflow-y-auto">
-          <ul className="flex flex-col gap-6 text-[28px] font-semibold leading-tight text-zinc-800">
+        <div className="pt-24 pb-10 px-10 flex flex-col h-full">
+          <ul className="flex flex-col gap-6 text-3xl font-semibold text-zinc-800">
             {NAV_ITEMS.map((item) => (
               <li key={item.label} className="border-b border-zinc-100 pb-4">
-                <Link 
-                  to={item.label === 'Store' ? '/store' : '/'} 
-                  className="hover:text-zinc-500 block w-full transition-colors"
-                >
+                <Link to={item.href} className="hover:text-zinc-500 block w-full">
                   {item.label}
                 </Link>
               </li>

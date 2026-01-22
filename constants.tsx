@@ -9,7 +9,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Vision', href: '/vision' },
   { label: 'AirPods', href: '/airpods' },
   { label: 'TV & Home', href: '/tv-home' },
-  { label: 'Entertainment', href: '/entertainment' },
   { label: 'Support', href: '/support' },
 ];
 
@@ -20,12 +19,21 @@ export const PRODUCTS: Product[] = [
     tagline: 'Hello, Apple Intelligence.',
     description: 'Built for Apple Intelligence. Professional performance and pro camera system.',
     image: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1600',
-    price: 'From $999',
+    price: 999,
+    priceFormatted: 'From $999',
     theme: 'dark',
     size: 'full',
     category: 'iPhone',
     features: ['A18 Pro chip', 'Grade 5 Titanium', '4K 120 fps Dolby Vision'],
-    colors: ['#3b3b3b', '#e3e3e3', '#d4af37']
+    colors: ['#3b3b3b', '#e3e3e3', '#d4af37'],
+    highlights: [
+      {
+        title: "Apple Intelligence",
+        description: "The first AI system designed to be personal and private.",
+        image: "https://images.unsplash.com/photo-1556656793-062ff987b50c?auto=format&fit=crop&q=80&w=800",
+        alignment: "left"
+      }
+    ]
   },
   {
     id: 'macbook-pro-m3',
@@ -33,7 +41,8 @@ export const PRODUCTS: Product[] = [
     tagline: 'Mind-blowing. Head-turning.',
     description: 'The most advanced chips ever built for a personal computer.',
     image: 'https://images.unsplash.com/photo-1517336714460-4c5040097471?auto=format&fit=crop&q=80&w=1600',
-    price: 'From $1599',
+    price: 1599,
+    priceFormatted: 'From $1,599',
     theme: 'dark',
     size: 'full',
     category: 'Mac',
@@ -41,11 +50,12 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'apple-watch-10',
-    name: 'WATCH',
-    tagline: 'SERIES 10',
-    description: 'Thinner. Smarter. Bigger.',
+    name: 'Apple Watch Series 10',
+    tagline: 'Thinner. Smarter. Bigger.',
+    description: 'A milestone in every sense. The largest display ever on an Apple Watch.',
     image: 'https://images.unsplash.com/photo-1434493907317-a46b53b81882?auto=format&fit=crop&q=80&w=800',
-    price: 'From $399',
+    price: 399,
+    priceFormatted: 'From $399',
     theme: 'light',
     size: 'half',
     category: 'Watch'
@@ -54,33 +64,12 @@ export const PRODUCTS: Product[] = [
     id: 'ipad-pro-m4',
     name: 'iPad Pro',
     tagline: 'Thinpossible.',
-    description: 'M4 chip. Ultra Retina XDR display.',
+    description: 'M4 chip. Ultra Retina XDR display. Incredible speed in a impossibly thin design.',
     image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&q=80&w=800',
-    price: 'From $999',
+    price: 999,
+    priceFormatted: 'From $999',
     theme: 'dark',
     size: 'half',
     category: 'iPad'
-  },
-  {
-    id: 'airpods-max-2',
-    name: 'AirPods Max',
-    tagline: 'The ultimate listening experience.',
-    description: 'Now in fresh colors. USB-C charging.',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800',
-    price: 'From $549',
-    theme: 'light',
-    size: 'half',
-    category: 'Audio'
-  },
-  {
-    id: 'vision-pro',
-    name: 'Vision Pro',
-    tagline: 'The era of spatial computing.',
-    description: 'Apps come alive in your space.',
-    image: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=800',
-    price: 'From $3499',
-    theme: 'dark',
-    size: 'half',
-    category: 'Vision'
   }
 ];
