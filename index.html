@@ -4,24 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Apple - Next Generation Excellence</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Discover the latest in innovation with our Apple-inspired experience. Featuring the new iPhone 16 Pro, iPad Pro with M4, and our intelligent AI Concierge.">
-    <meta name="keywords" content="Apple, iPhone, iPad, Mac, AI Concierge, Technology, Innovation">
-    <meta name="author" content="Apple Landing Page">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Apple - Next Generation Excellence">
-    <meta property="og:description" content="Experience the future of personal technology with our Apple-inspired landing page featuring an AI-powered concierge.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Apple - Next Generation Excellence">
-    <meta property="twitter:description" content="Experience the future of personal technology with our Apple-inspired landing page featuring an AI-powered concierge.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1200">
-
+    <meta name="description" content="Discover the latest in innovation with our Apple-inspired experience.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,15 +15,9 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             scroll-behavior: smooth;
-            overflow-x: hidden;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .dark-glass {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
@@ -51,22 +28,21 @@
         .animate-fade-up {
             animation: fade-up 0.8s ease-out forwards;
         }
-        /* Mobile optimization */
-        @media (max-width: 640px) {
-            .mobile-padding {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
+        .no-scroll {
+            overflow: hidden;
         }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
+    "@google/genai": "https://esm.sh/@google/genai@1.38.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
